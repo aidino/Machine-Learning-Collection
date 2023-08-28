@@ -62,7 +62,7 @@ class TestLinearRegression_GradientDescent(unittest.TestCase):
         boolean_array = np.isclose(W, self.W5_correct, atol=0.1)
         self.assertTrue(boolean_array.all())
 
-
+# main
 if __name__ == "__main__":
     print("Running Linear Regression Normal Equation tests:")
     unittest.main()
