@@ -1,0 +1,18 @@
+version: "3"
+services:
+  filebeat:
+    image: docker.elastic.co/beats/filebeat-oss:8.9.0
+    container_name: filebeat
+    user: root
+    environment:
+        - strict.perms=false
+    volumes:
+        - ./filebeat.yml:/usr/share/filebeat/filebeat.yml
+        - ./data:/usr/share/filebeat/data
+        - ./access-logs:/var/log/apache2
+    command: filebeat -e
+    logging:
+      driver: "json-file"
+      options:
+          max-file: "5"
+          max-size: "10m"
