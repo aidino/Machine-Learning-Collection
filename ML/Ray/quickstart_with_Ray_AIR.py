@@ -11,7 +11,7 @@ ray.init()
 ########
 # Read Parquet file to Ray Dataset
 dataset = ray.data.read_parquet(
-    "s3://anyscale-training-data/intro-to-ray-air/nyc_taxi_2021.parquet"
+    "nyc_tlc_data/yellow_tripdata_2021-01.parquet"
 )
 
 # Split data into training and validation subsets
@@ -23,7 +23,7 @@ train_dataset = train_dataset.repartition(num_blocks=5)
 valid_dataset = valid_dataset.repartition(num_blocks=5)
 
 # Define a preprocessor to normalize the columns by their range
-preprocessor = MinMaxScaler(columns=["trip_distance", "trip_duration"])
+preprocessor = MinMaxScaler(columns=["trip_distance"])
 
 ############
 # TRAINING #
