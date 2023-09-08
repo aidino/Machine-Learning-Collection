@@ -1,10 +1,6 @@
-FROM continuumio/miniconda3:latest
+FROM python:3.10-slim
 
-RUN pip install mlflow boto3 pymysql
+RUN apt-get update && apt-get install -y curl
+RUN pip install mlflow[extras] psycopg2-binary boto3 cryptography pymysql
 
-ADD . /app
-WORKDIR /app
-
-COPY wait-for-it.sh wait-for-it.sh 
-RUN chmod +x wait-for-it.sh
-
+EXPOSE 5000

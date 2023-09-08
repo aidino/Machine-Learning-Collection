@@ -7,6 +7,7 @@ from ray.air.integrations.mlflow import MLflowLoggerCallback
 
 
 def main(num_workers=2, use_gpu=False):
+    print("Train Fashion MNIST with PyTorch and MLflowLoggerCallback")
     trainer = TorchTrainer(
         train_func,
         train_loop_config={"lr": 1e-3, "batch_size": 64, "epochs": 4},
@@ -43,6 +44,8 @@ if __name__ == "__main__":
         help="Finish quickly for testing.",
     )
     args, _ = parser.parse_known_args()
+    
+    print(f"args: {args}")
 
     import ray
 
@@ -51,5 +54,7 @@ if __name__ == "__main__":
         args.num_workers = 2
         args.use_gpu = False
     else:
+        print("Connecting to Ray cluster...")
         ray.init(address=args.address)
+        print("Connected!")
     main(num_workers=args.num_workers, use_gpu=args.use_gpu)

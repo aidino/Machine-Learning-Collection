@@ -16,3 +16,4 @@ ML/Ray/task_images/
 ML/Ray-examples/data/
 ML/Ray-examples/ray-train/MNIST/
 ML/Ray-examples/ray-train/lightning_logs/
+mlops/mlflow/db_data/
