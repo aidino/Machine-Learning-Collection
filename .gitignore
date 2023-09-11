@@ -18,3 +18,4 @@ ML/Ray-examples/ray-train/MNIST/
 ML/Ray-examples/ray-train/lightning_logs/
 mlops/mlflow/db_data/
 mlops/mlflow/minio_data/
+ML/lightning/data/
