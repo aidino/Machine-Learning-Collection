@@ -20,3 +20,4 @@ mlops/mlflow/db_data/
 mlops/mlflow/minio_data/
 ML/lightning/data/
 ML/huggingface/audio/datasets/
+ML/huggingface/audio/whisper-small-vi/
