@@ -21,3 +21,4 @@ mlops/mlflow/minio_data/
 ML/lightning/data/
 ML/huggingface/audio/datasets/
 ML/huggingface/audio/whisper-small-vi/
+ml/text_normalization/datasets
